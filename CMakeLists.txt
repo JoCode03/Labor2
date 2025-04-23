@@ -5,4 +5,10 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Labor2 main.cpp
         A.cpp
-        A.h)
+        A.h
+        dishlib/Factory.cpp
+        dishlib/Factory.h
+)
+
+target_link_libraries(main dishlib)
+#Public oder Private?
