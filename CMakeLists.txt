@@ -8,6 +8,7 @@ add_executable(Labor2 main.cpp
         A.h
         dishlib/Factory.cpp
         dishlib/Factory.h
+        dishlib/PizzaMargherita.h
 )
 
 target_link_libraries(main dishlib)
