@@ -1,5 +1,7 @@
 #ifndef FACTORY_H
 #define FACTORY_H
+#include <iostream>
+#include <ostream>
 #include <string>
 #include <vector>
 
@@ -30,6 +32,24 @@ namespace dishlib {
             std::vector<std::string> vIngredients;
             std::string dishName;
         };
+
+    template <typename Recipe>
+    class Dish : public AbstractDish {
+        public:
+        explicit Dish(const std::string name) : AbstractDish(name) {}
+
+        void Prepare() override {
+            std::cout << "Zubereitung vom Rezept: " << this->GetDishName() << "\n" << std::endl;
+
+            for (const auto& ingredient : Recipe::Ingredients()) {
+                addIngredient(ingredient);
+            }
+
+            for (const auto& CookingSteps : Recipe::CookingSteps()) {
+                std::cout << "Anleitung: " << CookingSteps << "\n" << std::endl;
+            }
+        }
+    };
 }
 
 
