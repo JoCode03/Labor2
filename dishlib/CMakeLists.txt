@@ -1,4 +1,4 @@
 add_library(
         dishlib Factory.cpp
-        dishlib Factory.h
+        dishlib STATIC Factory.h
 )

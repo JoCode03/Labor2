@@ -3,13 +3,14 @@ project(Labor2)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Labor2 main.cpp
-        A.cpp
-        A.h
+add_library(dishlib STATIC
         dishlib/Factory.cpp
-        dishlib/Factory.h
-        dishlib/PizzaMargherita.h
 )
 
-target_link_libraries(main dishlib)
-#Public oder Private?
+target_include_directories(dishlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dishlib)
+
+add_executable(Labor2 main.cpp)
+
+target_include_directories(Labor2 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dishlib)
+
+target_link_libraries(Labor2 PRIVATE dishlib)

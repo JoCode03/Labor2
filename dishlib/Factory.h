@@ -46,8 +46,29 @@ namespace dishlib {
             }
 
             for (const auto& CookingSteps : Recipe::CookingSteps()) {
-                std::cout << "Anleitung: " << CookingSteps << "\n" << std::endl;
+                std::cout << "Anleitung: " << CookingSteps << std::endl;
             }
+        }
+    };
+
+    struct PizzaMargheritaRecipe {
+        static std::vector<std::string> Ingredients() {
+            return{
+                "Pizzateig",
+                "Tomatensauce",
+                "Käse",
+                "Basilikum"
+            };
+        }
+        static std::vector<std::string> CookingSteps() {
+            return{
+                "1. Teig herstellen",
+                "2. Teig ausrollen",
+                "3. Tomatensauce hinzufügen",
+                "4. Käse verteilen",
+                "5. Basilikum streuen",
+                "6. Pizza backen"
+            };
         }
     };
 }
