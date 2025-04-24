@@ -1,9 +1,10 @@
-#include "PizzaMargherita.h"
-#include "VegetableSoup.h"
 #include "dishlib/AbstractDish.h"
 #include <memory>
 #include <algorithm>
 #include "DishFactory.h"
+#include "Customer.h"
+
+
 
 using namespace std;
 using namespace dishlib;
@@ -29,6 +30,7 @@ int main() {
                   << std::endl;
     }
 
+    vector<unique_ptr<Customer>> customers;
 
 
     return 0;
