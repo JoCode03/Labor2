@@ -26,25 +26,8 @@ namespace dishlib {
             std::string dishName;
         };
 
-    template <typename Recipe>
-    class Dish : public AbstractDish {
-        public:
-        explicit Dish(const std::string name);
-
-        void Prepare() override {
-            std::cout << "Zubereitung vom Rezept: " << this->GetDishName() << "\n" << std::endl;
-
-            for (const auto& ingredient : Recipe::Ingredients()) {
-                addIngredient(ingredient);
-            }
-
-            for (const auto& CookingSteps : Recipe::CookingSteps()) {
-                std::cout << "Anleitung: " << CookingSteps << std::endl;
-            }
-        }
     };
 
-    };
 
 
 
