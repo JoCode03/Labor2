@@ -44,5 +44,10 @@ int main() {
         vDishes.pop_back();
     }
 
+    //Schleife geht alle Customer durch und setzt customerDish auf einen nullptr
+    for (auto& customer : customers) {
+        customer->EatDish();
+    }
+
     return 0;
 }
