@@ -1,5 +1,6 @@
 #ifndef DISHFACTORY_H
 #define DISHFACTORY_H
+#include <memory>
 #include "AbstractDish.h"
 
 namespace dishlib {
@@ -10,9 +11,12 @@ namespace dishlib {
     };
 
     class DishFactory {
+    public:
+        static std::unique_ptr<AbstractDish> CreateDish(DishType type);
+    };
 
     };
-}
+
 
 
 #endif //DISHFACTORY_H
