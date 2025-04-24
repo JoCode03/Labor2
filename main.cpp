@@ -9,8 +9,10 @@ using namespace dishlib;
 
 int main() {
     vector<unique_ptr<AbstractDish>> vDishes;
-    vDishes.push_back(DishFactory::CreateDish(DishType::PizzaMargherita));
-    vDishes.push_back(DishFactory::CreateDish(DishType::VegetableSoup));
+    std::unique_ptr<AbstractDish> pizza = DishFactory::CreateDish(DishType::PizzaMargherita);
+    vDishes.push_back(std::move(pizza));
+    std::unique_ptr<AbstractDish> soup = DishFactory::CreateDish(DishType::VegetableSoup);
+    vDishes.push_back(std::move(soup));
 
     PizzaMargherita pizza("Pizza Margherita");
     pizza.Prepare();
