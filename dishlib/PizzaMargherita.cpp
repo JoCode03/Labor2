@@ -1,26 +1,24 @@
 #include <string>
 #include "PizzaMargherita.h"
+#include <vector>
 
-class AbstractDish : public PizzaMargherita {
-    std::string ingredient;
-};
-class PizzaMargheritaRecipe {
-    static std::vector<std::string> Ingredients() {
-        return{
-            "Pizzateig",
-            "Tomatensauce",
-            "Käse",
-            "Basilikum"
+namespace dishlib {
+    PizzaMargherita::PizzaMargherita(const std::string &name) : AbstractDish(name) {}
+    void PizzaMargherita::Prepare() {
+
+        std::vector<std::string> ingredients = {
+            "Pizzateig ", "Tomatensauce ", "Käse ", "Basilikum "
         };
-    }
-    static std::vector<std::string> CookingSteps() {
-        return{
-            "1. Teig herstellen",
-            "2. Teig ausrollen",
-            "3. Tomatensauce hinzufügen",
-            "4. Käse verteilen",
-            "5. Basilikum streuen",
-            "6. Pizza backen \n"
+
+        std::vector<std::string> steps = {
+            "herstellen", "verteilen", "reiben und verteilen", "streuen"
         };
+
+        for (size_t i = 0; i < ingredients.size(); ++i) {
+            addIngredient(ingredients[i]);
+            std::cout << "Schritt [" << i << "]: " << vIngredients[i]<< steps[i] << std::endl;
+        }
+
+        std::cout << "Letzter Schritt: Pizza backen\n";
     }
-};
+}

@@ -1,12 +1,16 @@
+#include "PizzaMargherita.h"
+#include "VegetableSoup.h"
 #include "dishlib/AbstractDish.h"
 
 using namespace std;
 using namespace dishlib;
 
 int main() {
-    dishlib::Dish<dishlib::PizzaMargheritaRecipe> pizza("Pizza Margherita");
+    PizzaMargherita pizza("Pizza Margherita");
     pizza.Prepare();
-    dishlib::Dish<dishlib::VegetableSoupRecipe> vegetable("Vegetable Soup");
-    vegetable.Prepare();
+    std::cout << "------------------------" << std::endl;
+    VegetableSoup soup("Vegetable Soup");
+    soup.Prepare();
+
     return 0;
 }

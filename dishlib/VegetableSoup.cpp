@@ -1,26 +1,25 @@
-
-
+#include <string>
 #include "VegetableSoup.h"
+#include <vector>
+#include <iostream>
 
+namespace dishlib {
+    VegetableSoup::VegetableSoup(const std::string &name) : AbstractDish(name) {}
+    void VegetableSoup::Prepare() {
 
-class VegetableSoupRecipe {
-    static std::vector<std::string> Ingredients() {
-        return{
-            "Wasser",
-            "Gemüsebrühe",
-            "Möhre",
-            "Lauch",
-            "Zwiebel"
+        std::vector<std::string> ingredients = {
+            "Wasser ", "Gemüsebrühe ", "Möhre ", "Lauch ", "Zwiebel "
         };
-    }
-    static std::vector<std::string> CookingSteps() {
-        return{
-            "1. Gemüse schneiden",
-            "2. Wasser kochen",
-            "3. Gemüsebrühe einrühren",
-            "4. Möhre hinzufügen",
-            "5. Lauch hinzufügen",
-            "6. Zwiebel hinzufügen",
-            "7. Suppe kochen lassen \n"
+
+        std::vector<std::string> steps = {
+            "kochen","einrühren","schneiden und hinzufügen","schneiden hinzufügen", "schneiden und hinzufügen",
         };
+
+        for (size_t i = 0; i < ingredients.size(); ++i) {
+            addIngredient(ingredients[i]);
+            std::cout << "Schritt [" << i + 1 << "]: " << vIngredients[i] << steps[i] << std::endl;
+        }
+
+        std::cout << "Letzter Schritt: Suppe kochen lassen \n";
     }
+}
