@@ -15,7 +15,9 @@ add_library(dishlib STATIC
 
 target_include_directories(dishlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dishlib)
 
-add_executable(Labor2 main.cpp)
+add_executable(Labor2 main.cpp
+        Customer.cpp
+        Customer.h)
 
 target_include_directories(Labor2 PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/dishlib)
 
