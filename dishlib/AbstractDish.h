@@ -1,13 +1,13 @@
-#ifndef FACTORY_H
-#define FACTORY_H
+#ifndef ABSTRACTDISH_H
+#define ABSTRACTDISH_H
 #include <iostream>
 #include <ostream>
 #include <string>
 #include <vector>
 
 namespace dishlib {
-        struct AbstractDish {
-        //Struct oder Class?
+        class  AbstractDish {
+            
         public:
             explicit AbstractDish(const std::string name) : dishName(name) {}
             virtual void Prepare() = 0;
@@ -51,7 +51,7 @@ namespace dishlib {
         }
     };
 
-    struct PizzaMargheritaRecipe {
+    class PizzaMargheritaRecipe {
         static std::vector<std::string> Ingredients() {
             return{
                 "Pizzateig",
@@ -72,7 +72,7 @@ namespace dishlib {
         }
     };
 
-    struct VegetableSoupRecipe {
+    class VegetableSoupRecipe {
         static std::vector<std::string> Ingredients() {
             return{
                 "Wasser",

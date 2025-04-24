@@ -1,4 +1,4 @@
-#include "dishlib/Factory.h"
+#include "dishlib/AbstractDish.h"
 
 int main() {
     dishlib::Dish<dishlib::PizzaMargheritaRecipe> pizza("Pizza Margherita");

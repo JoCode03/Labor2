@@ -4,7 +4,11 @@ project(Labor2)
 set(CMAKE_CXX_STANDARD 20)
 
 add_library(dishlib STATIC
-        dishlib/Factory.cpp
+        dishlib/AbstractDish.cpp
+        dishlib/PizzaMargherita.cpp
+        dishlib/PizzaMargherita.h
+        dishlib/VegetableSoup.cpp
+        dishlib/VegetableSoup.h
 )
 
 target_include_directories(dishlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dishlib)
