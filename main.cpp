@@ -1,5 +1,8 @@
 #include "dishlib/AbstractDish.h"
 
+using namespace std;
+using namespace dishlib;
+
 int main() {
     dishlib::Dish<dishlib::PizzaMargheritaRecipe> pizza("Pizza Margherita");
     pizza.Prepare();

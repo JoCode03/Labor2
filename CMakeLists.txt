@@ -9,6 +9,8 @@ add_library(dishlib STATIC
         dishlib/PizzaMargherita.h
         dishlib/VegetableSoup.cpp
         dishlib/VegetableSoup.h
+        dishlib/DishFactory.cpp
+        dishlib/DishFactory.h
 )
 
 target_include_directories(dishlib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dishlib)

@@ -7,28 +7,21 @@
 
 namespace dishlib {
         class  AbstractDish {
-            
+
+
         public:
-            explicit AbstractDish(const std::string name) : dishName(name) {}
+            explicit AbstractDish(const std::string& dishName);
             virtual void Prepare() = 0;
             virtual ~AbstractDish() = default;
             AbstractDish() = delete;
 
-            std::string GetDishName() const {
-                return dishName;
-            }
-            std::vector<std::string> GetIngredients() const {
-                return vIngredients;
-            }
-            size_t GetNumberIngredients() const {
-                return vIngredients.size();
-            }
+            virtual std::string GetDishName() const;
+            virtual std::vector<std::string> GetIngredients() const;
+            virtual size_t GetNumberIngredients() const;
 
 
         protected:
-            void addIngredient(const std::string ingredient) {
-                vIngredients.push_back(ingredient);
-            }
+            void addIngredient(const std::string ingredient);
             std::vector<std::string> vIngredients;
             std::string dishName;
         };
@@ -36,7 +29,7 @@ namespace dishlib {
     template <typename Recipe>
     class Dish : public AbstractDish {
         public:
-        explicit Dish(const std::string name) : AbstractDish(name) {}
+        explicit Dish(const std::string name);
 
         void Prepare() override {
             std::cout << "Zubereitung vom Rezept: " << this->GetDishName() << "\n" << std::endl;
@@ -51,50 +44,8 @@ namespace dishlib {
         }
     };
 
-    class PizzaMargheritaRecipe {
-        static std::vector<std::string> Ingredients() {
-            return{
-                "Pizzateig",
-                "Tomatensauce",
-                "Käse",
-                "Basilikum"
-            };
-        }
-        static std::vector<std::string> CookingSteps() {
-            return{
-                "1. Teig herstellen",
-                "2. Teig ausrollen",
-                "3. Tomatensauce hinzufügen",
-                "4. Käse verteilen",
-                "5. Basilikum streuen",
-                "6. Pizza backen \n"
-            };
-        }
     };
 
-    class VegetableSoupRecipe {
-        static std::vector<std::string> Ingredients() {
-            return{
-                "Wasser",
-                "Gemüsebrühe",
-                "Möhre",
-                "Lauch",
-                "Zwiebel"
-            };
-        }
-        static std::vector<std::string> CookingSteps() {
-            return{
-                "1. Gemüse schneiden",
-                "2. Wasser kochen",
-                "3. Gemüsebrühe einrühren",
-                "4. Möhre hinzufügen",
-                "5. Lauch hinzufügen",
-                "6. Zwiebel hinzufügen",
-                "7. Suppe kochen lassen \n"
-            };
-        }
-    };
-}
 
 
 #endif //FACTORY_H
