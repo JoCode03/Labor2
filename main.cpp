@@ -36,6 +36,13 @@ int main() {
     customers.push_back(make_unique<Customer>("Tim Mustermann"));
     customers.push_back(make_unique<Customer>("Lana Musterfrau"));
 
+    //Schleife verteilt die Gerichte aus VDishes von hinten nach vorne "vDisches.BACK"
+    //Wenn vDishes leer ist wird die Schleife abgebrochen verbleibende Customer bekommen kein Gericht
+    //Das Gericht wird aus dem Vektor dem CUstomer zugeordnet und vom Vektor abgeschnitten POP_BACK
+    for (size_t i = 0; i < customers.size() && !vDishes.empty(); ++i) {
+        customers[i]->ServeDish(vDishes.back());
+        vDishes.pop_back();
+    }
 
     return 0;
 }
