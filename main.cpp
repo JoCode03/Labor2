@@ -33,6 +33,8 @@ int main() {
     vector<unique_ptr<Customer>> customers;
     customers.push_back(make_unique<Customer>("Max Mustermann"));
     customers.push_back(make_unique<Customer>("Erika Musterfrau"));
+    customers.push_back(make_unique<Customer>("Tim Mustermann"));
+    customers.push_back(make_unique<Customer>("Lana Musterfrau"));
 
 
     return 0;
