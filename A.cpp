@@ -61,6 +61,6 @@ A& A::operator=(A const &rhs) {//Kopierzuweisungsoperator
 A& A::operator=(A &&rhs) { //Verschiebezuweisungsoperator
         std::swap(_nptr, rhs._nptr);
         std::swap(_aptr, rhs._aptr);
-        std::cout << "Class A move assignment operator: " << *((*this)._nptr) << std::endl; //oder als *this->_nptr
+        std::cout << "Class A move assignment operator: " << *_nptr << std::endl;
         return *this;
     }
