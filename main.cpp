@@ -11,9 +11,9 @@
         A a5{7};
         A a6{8};
         a6 = a5;
-        A a7{9};
+        /*A a7{9};
         a7 = A{10};
         A a8{11};
-        A a9{std::move(a8)};
+        A a9{std::move(a8)}; */
         return 0;
     }
